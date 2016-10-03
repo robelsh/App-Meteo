@@ -16,6 +16,7 @@
 		73036B431DA2AB55008EB529 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73036B421DA2AB55008EB529 /* TestUITests.swift */; };
 		73036B511DA2BAD8008EB529 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73036B501DA2BAD8008EB529 /* WeatherService.swift */; };
 		73036B531DA2DCC3008EB529 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73036B521DA2DCC3008EB529 /* Weather.swift */; };
+		739DD5911DA2E84100204063 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739DD5901DA2E84100204063 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		73036B441DA2AB55008EB529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73036B501DA2BAD8008EB529 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		73036B521DA2DCC3008EB529 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		739DD5901DA2E84100204063 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				73036B241DA2AB55008EB529 /* ViewController.swift */,
 				73036B521DA2DCC3008EB529 /* Weather.swift */,
 				73036B501DA2BAD8008EB529 /* WeatherService.swift */,
+				739DD5901DA2E84100204063 /* SwiftyJSON.swift */,
 				73036B261DA2AB55008EB529 /* Main.storyboard */,
 				73036B291DA2AB55008EB529 /* Assets.xcassets */,
 				73036B2B1DA2AB55008EB529 /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 				73036B531DA2DCC3008EB529 /* Weather.swift in Sources */,
 				73036B251DA2AB55008EB529 /* ViewController.swift in Sources */,
 				73036B511DA2BAD8008EB529 /* WeatherService.swift in Sources */,
+				739DD5911DA2E84100204063 /* SwiftyJSON.swift in Sources */,
 				73036B231DA2AB55008EB529 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 				73036B491DA2AB55008EB529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73036B4A1DA2AB55008EB529 /* Build configuration list for PBXNativeTarget "TestTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				73036B4C1DA2AB55008EB529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73036B4D1DA2AB55008EB529 /* Build configuration list for PBXNativeTarget "TestUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				73036B4F1DA2AB55008EB529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
