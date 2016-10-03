@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController, WeatherServiceDelegate {
+class ViewController: UIViewController, WeatherServiceDelegate, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var cityButton: UIButton!
 
     var weatherService = WeatherService()
+    var locationManager = CLLocationManager()
     
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
@@ -56,18 +60,28 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     
     func setWeather(weather: Weather) {
         self.cityLabel.text = weather.cityName
-        self.descLabel.text = weather.desc
-        self.tempLabel.text = String(format:"%f", weather.temp)
+        cityButton.setTitle(weather.cityName, for: UIControlState.normal)
+        self.descLabel.text = weather.desc.capitalized
+        self.tempLabel.text = String(format:"%f", weather.temp-273.15)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         self.weatherService.delegate = self
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        let lat = locationManager.location?.coordinate.latitude
+        let lon = locationManager.location?.coordinate.longitude
+        self.weatherService.getWeatherForCityCoordinate(lat: String(format:"%f",lat!), lon: String(format:"%f",lon!))
+
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -41,5 +41,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Weather App wants to use your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Weather App wants to use your location</string>
 </dict>
 </plist>

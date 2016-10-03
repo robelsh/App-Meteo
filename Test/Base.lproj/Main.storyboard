@@ -62,6 +62,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityButton" destination="Tpv-0U-2Qr" id="urY-Kn-13R"/>
                         <outlet property="cityLabel" destination="Acv-gZ-u9Q" id="z4B-ry-NjR"/>
                         <outlet property="descLabel" destination="aN8-GW-6PA" id="SZD-zv-etI"/>
                         <outlet property="tempLabel" destination="FfG-ew-gZc" id="FwI-0p-Whb"/>
