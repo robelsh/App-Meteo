@@ -19,7 +19,10 @@ class WeatherService {
     var delegate: WeatherServiceDelegate?
     
     func getWeatherForCity(city : String){
-        let path = "http://api.openweathermap.org/data/2.5/weather?q=paris&APPID=85bfe217fd2ec11a64c748d4e392b871"
+        let apiKey = "85bfe217fd2ec11a64c748d4e392b871"
+        let cityEscaped = city.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
+        
+        let path = "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&APPID=\(apiKey)"
         let url = URL(string: path)
         let session = URLSession.shared
         let task = session.dataTask(with: url!) { (data: Data?, response: URLResponse?, error: Error?) in
