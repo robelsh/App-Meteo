@@ -37,25 +37,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-0U-2Qr">
-                                <frame key="frameInset" minX="20" minY="164" width="374" height="40"/>
+                                <frame key="frameInset" minX="1" minY="141" width="374" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Set City"/>
                                 <connections>
                                     <action selector="setCityTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YRu-AJ-P0Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxm-MK-1G9">
+                                <frame key="frameInset" minX="165" minY="210" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Loca:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWW-pP-lc7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FfG-ew-gZc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="4jc-bA-dmn"/>
-                            <constraint firstItem="Tpv-0U-2Qr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7IE-r2-MbB"/>
                             <constraint firstItem="Acv-gZ-u9Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="D9M-G8-GUl"/>
-                            <constraint firstItem="Tpv-0U-2Qr" firstAttribute="top" secondItem="Acv-gZ-u9Q" secondAttribute="bottom" constant="31" id="DM8-su-n8e"/>
                             <constraint firstItem="FfG-ew-gZc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KNs-sz-nbO"/>
                             <constraint firstItem="aN8-GW-6PA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OxM-yQ-tQQ"/>
-                            <constraint firstItem="Tpv-0U-2Qr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Yx6-pR-16s"/>
+                            <constraint firstItem="Tpv-0U-2Qr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QD1-0h-v0l"/>
+                            <constraint firstItem="Tpv-0U-2Qr" firstAttribute="top" secondItem="Acv-gZ-u9Q" secondAttribute="bottom" constant="8" id="SAM-zg-grQ"/>
                             <constraint firstItem="aN8-GW-6PA" firstAttribute="top" secondItem="FfG-ew-gZc" secondAttribute="bottom" constant="8" id="bBV-WH-HaR"/>
                             <constraint firstItem="Acv-gZ-u9Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="e8t-Ka-JfI"/>
+                            <constraint firstItem="Lxm-MK-1G9" firstAttribute="top" secondItem="Tpv-0U-2Qr" secondAttribute="bottom" constant="29" id="fDm-I9-L1H"/>
+                            <constraint firstAttribute="trailing" secondItem="Tpv-0U-2Qr" secondAttribute="trailing" id="iIe-T8-euP"/>
                             <constraint firstItem="aN8-GW-6PA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nhE-aw-fmd"/>
                             <constraint firstItem="Acv-gZ-u9Q" firstAttribute="top" secondItem="aN8-GW-6PA" secondAttribute="bottom" constant="8" id="phc-pU-1Ni"/>
                             <constraint firstItem="FfG-ew-gZc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vZG-yg-F2u"/>

@@ -24,6 +24,12 @@ class ViewController: UIViewController, WeatherServiceDelegate, CLLocationManage
         openCityAlert()
     }
     
+    @IBAction func Loca(_ sender: UIButton) {
+        locationManager.startUpdatingLocation()
+        let lat = locationManager.location?.coordinate.latitude
+        let lon = locationManager.location?.coordinate.longitude
+        self.weatherService.getWeatherForCityCoordinate(lat: String(format:"%f",lat!), lon: String(format:"%f",lon!))
+    }
     
     func openCityAlert() {
         //Create Alert COntroller
@@ -74,10 +80,6 @@ class ViewController: UIViewController, WeatherServiceDelegate, CLLocationManage
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        let lat = locationManager.location?.coordinate.latitude
-        let lon = locationManager.location?.coordinate.longitude
-        self.weatherService.getWeatherForCityCoordinate(lat: String(format:"%f",lat!), lon: String(format:"%f",lon!))
 
     }
 
