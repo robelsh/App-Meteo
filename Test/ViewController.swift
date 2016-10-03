@@ -57,6 +57,7 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     func setWeather(weather: Weather) {
         self.cityLabel.text = weather.cityName
         self.descLabel.text = weather.desc
+        self.tempLabel.text = String(format:"%f", weather.temp)
         
     }
     

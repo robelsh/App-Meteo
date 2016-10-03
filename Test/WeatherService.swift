@@ -23,21 +23,24 @@ class WeatherService {
         let url = URL(string: path)
         let session = URLSession.shared
         let task = session.dataTask(with: url!) { (data: Data?, response: URLResponse?, error: Error?) in
-            print(data)
+            let json = JSON(data: data!)
+            let lon = json["coord"]["lon"].double
+            let lat = json["coord"]["lat"].double
+            let temp = json["main"]["temp"].double
+            let name = json["name"].string
+            let desc = json["weather"][0]["description"].string
+            
+            let weather = Weather(cityName: name!, temp: temp!, desc: desc!)
+
+            if self.delegate != nil {
+                DispatchQueue.main.async {
+                    self.delegate?.setWeather(weather: weather)
+                }
+            }
+            
+            print(lat,lon)
         }
         
         task.resume()
-        
-        //Request weather data
-        //Wait ...
-        //Process Data
-        
-        /*
-         et weather = Weather(cityName: city, temp: 237.12, desc: "a nice day")
-        
-        if delegate != nil {
-            delegate?.setWeather(weather: weather)
-        }
-         */
     }
 }
