@@ -12,10 +12,14 @@ struct Weather {
     let cityName: String
     let temp: Double
     let desc: String
+    let lat: Double
+    let lon: Double
     
-    init(cityName: String, temp: Double, desc: String) {
+    init(cityName: String, temp: Double, desc: String, lon: Double, lat: Double) {
         self.cityName = cityName
         self.temp = temp
         self.desc = desc
+        self.lat = lat
+        self.lon = lon
     }
 }

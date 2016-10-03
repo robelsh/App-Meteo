@@ -23,34 +23,17 @@ class WeatherService {
         let cityEscaped = city.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)
         
         let path = "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&APPID=\(apiKey)"
-        let url = URL(string: path)
-        let session = URLSession.shared
-        let task = session.dataTask(with: url!) { (data: Data?, response: URLResponse?, error: Error?) in
-            let json = JSON(data: data!)
-            let lon = json["coord"]["lon"].double
-            let lat = json["coord"]["lat"].double
-            let temp = json["main"]["temp"].double
-            let name = json["name"].string
-            let desc = json["weather"][0]["description"].string
-            
-            let weather = Weather(cityName: name!, temp: temp!, desc: desc!)
-
-            if self.delegate != nil {
-                DispatchQueue.main.async {
-                    self.delegate?.setWeather(weather: weather)
-                }
-            }
-            
-            print(lat,lon)
-        }
-        
-        task.resume()
+        getWeather(path: path)
     }
     
     func getWeatherForCityCoordinate(lat : String, lon : String){
         let apiKey = "85bfe217fd2ec11a64c748d4e392b871"
         
         let path = "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&APPID=\(apiKey)"
+        getWeather(path: path)
+    }
+    
+    func getWeather(path: String){
         let url = URL(string: path)
         let session = URLSession.shared
         let task = session.dataTask(with: url!) { (data: Data?, response: URLResponse?, error: Error?) in
@@ -61,7 +44,7 @@ class WeatherService {
             let name = json["name"].string
             let desc = json["weather"][0]["description"].string
             
-            let weather = Weather(cityName: name!, temp: temp!, desc: desc!)
+            let weather = Weather(cityName: name!, temp: temp!, desc: desc!, lon: lon!, lat: lat!)
             
             if self.delegate != nil {
                 DispatchQueue.main.async {
@@ -73,6 +56,7 @@ class WeatherService {
         }
         
         task.resume()
+
     }
 
 }
